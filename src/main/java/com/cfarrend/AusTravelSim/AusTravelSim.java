@@ -2,9 +2,6 @@ package com.cfarrend.AusTravelSim;
 
 import java.util.Scanner;
 
-/**
- * Created by Chris on 05/01/2018.
- */
 public class AusTravelSim {
 
     public static void main(String[] args) {
