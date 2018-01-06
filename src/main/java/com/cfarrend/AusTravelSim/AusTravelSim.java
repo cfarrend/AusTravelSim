@@ -9,6 +9,9 @@ public class AusTravelSim {
 
     public static void main(String[] args) {
 
+        /* Game Variables */
+        Game game = new Game();
+
         Scanner input = new Scanner(System.in);
 
         System.out.println("Hello world");
