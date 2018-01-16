@@ -6,6 +6,8 @@ import java.util.Random;
 
 public class World {
 
+    static final int SPAWN_ID = 0;
+
     String mapName;
     int numberOfLocations;
 
@@ -29,34 +31,35 @@ public class World {
         return nextRoadId++;
     }
 
-    public Location getPlayerLocation() {
-        return this.playerLocation;
+    public Location getLocationAt(int id) {
+        if (locations.containsKey(id)) {
+            return locations.get(id);
+        }   else {
+            return null;
+        }
     }
 
     public void buildMap() {
         // TODO: Read from file to do a similar thing
         // TODO: Location add function to add to map and append location ID
-        Location l1 = new Location("Tamworth", getNextLocationId(), 41006, -31.0927, 150.9320);
-        Location l2 = new Location("Armidale", getNextLocationId(), 23352, -30.5016, 151.6662);
+        Location l1 = new Location("Tamworth", getNextLocationId(), State.NSW, 41006, -31.0927, 150.9320);
+        Location l2 = new Location("Armidale", getNextLocationId(), State.NSW,23352, -30.5016, 151.6662);
 
         // TODO: Where should this function be located?
         //Road.connectOneWayRoad("New England Highway", Direction.DIR_NE, getNextRoadId(), 3, 3, 2, l1, l2);
-        Road.connectTwoWayRoad("New England Highway", Direction.DIR_NE, getNextRoadId(), getNextRoadId(), 3, 3, 2, l1, l2);
+        Road.connectTwoWayRoad("New England Highway [A15]", Direction.DIR_NE, getNextRoadId(), getNextRoadId(), 3, 3, 2, l1, l2);
 
         // TODO: Temp for now, quick and dirty map adding
         locations.put(l1.getId(), l1);
         locations.put(l2.getId(), l2);
 
-        l1.printLocationInfo();
-        l2.printLocationInfo();
+        //l1.printLocationInfo();
+        //l2.printLocationInfo();
 
     }
 
     public int spawnPlayer() {
-        Random random = new Random();
-        int locationId = random.nextInt(nextLocationId);
-        this.playerLocation = locations.get(locationId);
-        return locationId;
+        return SPAWN_ID;
     }
 
     // TODO: Decide on moving functions (i.e from Location, from World, what about Player class? lots of questions)

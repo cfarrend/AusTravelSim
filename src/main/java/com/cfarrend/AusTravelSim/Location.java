@@ -8,6 +8,7 @@ public class Location {
     // Metadata
     String name;
     int id;
+    State state;
     int population;
     double latitude;
     double longitude;
@@ -16,9 +17,10 @@ public class Location {
     Map<Direction, Road> outgoingRoads = new HashMap<>();
     Map<Direction, Road> incomingRoads = new HashMap<>();
 
-    public Location(String name, int id, int population, double latitude, double longitude) {
+    public Location(String name, int id, State state, int population, double latitude, double longitude) {
         this.name = name;
         this.id = id;
+        this.state = state;
         this.population = population;
         this.latitude = latitude;
         this.longitude = longitude;
@@ -30,6 +32,30 @@ public class Location {
 
     public int getId() {
         return this.id;
+    }
+
+    public String getStateAbbrev() {
+        return this.state.getNameAbbrev();
+    }
+
+    public String getStateFull() {
+        return this.state.getNameFull();
+    }
+
+    public String[] getOutgoingRoads() {
+
+        String[] outgoing = new String[outgoingRoads.size()];
+
+        int i = 0;
+        for (Direction key : outgoingRoads.keySet()) {
+            if (outgoingRoads.containsKey(key)) {
+                Road road = outgoingRoads.get(key);
+                outgoing[i] = road.getDirection().getName() + " to " + road.getFinish().getName() + " (" + road.getFinish().getStateAbbrev() + ") - via " + road.getName();
+            }
+            i++;
+        }
+
+        return outgoing;
     }
 
     public void printLocationInfo() {
