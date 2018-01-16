@@ -9,6 +9,7 @@ public class AusTravelSim {
         /* Game Variables */
         Game game = new Game();
 
+        /* Just to make debugging easier
         Scanner input = new Scanner(System.in);
 
         System.out.println("Hello world");
@@ -52,6 +53,6 @@ public class AusTravelSim {
 
         }
         System.out.println("\n" + currentLocation);
-
+        */
     }
 }

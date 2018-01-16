@@ -3,7 +3,33 @@ package com.cfarrend.AusTravelSim;
 public enum Direction {
     DIR_N, DIR_NE, DIR_E, DIR_SE, DIR_S, DIR_SW, DIR_W, DIR_NW;
 
-    public static String printDirection(Direction dirs) {
+    private Direction opposite;
+    private String name;
+
+    static {
+        DIR_N.opposite = DIR_S;
+        DIR_NE.opposite = DIR_SW;
+        DIR_E.opposite = DIR_W;
+        DIR_SE.opposite = DIR_NW;
+        DIR_S.opposite = DIR_N;
+        DIR_SW.opposite = DIR_NE;
+        DIR_W.opposite = DIR_E;
+        DIR_NW.opposite = DIR_SE;
+    }
+
+    static {
+        DIR_N.name = "North";
+        DIR_NE.name = "North East";
+        DIR_E.name = "East";
+        DIR_SE.name = "South East";
+        DIR_S.name = "South";
+        DIR_SW.name = "South West";
+        DIR_W.name = "West";
+        DIR_NW.name = "North West";
+    }
+
+    /* Obsolete for now hopefully
+    public String printDirection(Direction dirs) {
         switch (dirs) {
             case DIR_N:
                 return "North";
@@ -47,6 +73,14 @@ public enum Direction {
             default:
                 return null;
         }
+    } */
+
+    public Direction getOpposite() {
+        return opposite;
+    }
+
+    public String getName() {
+        return name;
     }
 
 }
