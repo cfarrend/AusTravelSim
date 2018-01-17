@@ -11,6 +11,7 @@ public class Road {
     int complexity;
     int quality;
     int density;
+    // TODO: Length
 
     // Data
     Location start;
@@ -41,6 +42,10 @@ public class Road {
 
     public Direction getDirection() {
         return this.dir;
+    }
+
+    public int getId() {
+        return  this.id;
     }
 
     public Location getStart() {

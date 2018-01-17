@@ -42,7 +42,11 @@ public class Location {
         return this.state.getNameFull();
     }
 
-    public String[] getOutgoingRoads() {
+    public Map<Direction, Road> getOutgoingRoads() {
+        return this.outgoingRoads;
+    }
+
+    public String[] getOutgoingRoadsText() {
 
         String[] outgoing = new String[outgoingRoads.size()];
 

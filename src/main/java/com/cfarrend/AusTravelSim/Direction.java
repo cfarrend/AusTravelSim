@@ -83,4 +83,36 @@ public enum Direction {
         return name;
     }
 
+    public static Direction parseDir(String input) {
+        switch (input) {
+            case "North":
+            case "N":
+                return DIR_N;
+            case "North East":
+            case "NE":
+                return DIR_NE;
+            case "East":
+            case "E":
+                return DIR_E;
+            case "South East":
+            case "SE":
+                return DIR_SE;
+            case "South":
+            case "S":
+                return DIR_S;
+            case "South West":
+            case "SW":
+                return DIR_SW;
+            case "West":
+            case "W":
+                return DIR_W;
+            case "North West":
+            case "NW":
+                return DIR_NW;
+        }
+
+        return null;
+
+    }
+
 }

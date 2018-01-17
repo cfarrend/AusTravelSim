@@ -6,13 +6,33 @@ public class AusTravelSim {
 
     public static void main(String[] args) {
 
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Welcome to AusTravelSim, type EXIT or exit to quit the game");
+
         /* Game Variables */
         Game game = new Game();
 
-        /* Just to make debugging easier
-        Scanner input = new Scanner(System.in);
+        while (game.isActive()) {
+            game.printStatus();
+            String command = input.next();
 
-        System.out.println("Hello world");
+            switch (command) {
+                case "INFO":
+                case "info":
+                    game.printTownInfo();
+                    break;
+                case "EXIT":
+                case "exit":
+                    game.close();
+                    break;
+                default:
+                    game.move(Direction.parseDir(command));
+                    break;
+            }
+        }
+
+        /* Just to make debugging easier
 
         System.out.println("Areas to travel too: ");
         System.out.println("\t1. Sydney\n\t2. Canberra\n\t3. Melbourne\n\t4. Brisbane\n\t5. Adelaide\n\t6. Perth\n\t7. Darwin\n\t8. Tamworth\n\t9. End Game");
