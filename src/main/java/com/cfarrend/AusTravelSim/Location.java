@@ -75,6 +75,7 @@ public class Location {
                 System.out.println("Name: " + road.getName());
                 System.out.println("Desination: " + road.getFinish().getName());
                 System.out.println("Direction: " + road.getDirection().getName());
+                System.out.println("Length: " + road.getLength() + "km");
             }
         }
         System.out.println("--- Incoming Roads ---");

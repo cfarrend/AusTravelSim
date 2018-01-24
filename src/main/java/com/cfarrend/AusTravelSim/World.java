@@ -48,8 +48,8 @@ public class World {
 
         // TODO: Where should this function be located?
         //Road.connectOneWayRoad("New England Highway", Direction.DIR_NE, getNextRoadId(), 3, 3, 2, l1, l2);
-        Road.connectTwoWayRoad("New England Highway [A15]", Direction.DIR_NE, getNextRoadId(), getNextRoadId(), 3, 3, 2, l1, l2);
-        Road.connectTwoWayRoad("Waterfall Way [B78]", Direction.DIR_E, getNextRoadId(), getNextRoadId(), 4, 3, 2, l2, l3);
+        Road.connectTwoWayRoad("New England Highway [A15]", Direction.DIR_NE, getNextRoadId(), getNextRoadId(), 112, 3, 3, 2, l1, l2);
+        Road.connectTwoWayRoad("Waterfall Way [B78]", Direction.DIR_E, getNextRoadId(), getNextRoadId(), 128, 4, 3, 2, l2, l3);
 
         // TODO: Temp for now, quick and dirty map adding
         locations.put(l1.getId(), l1);
