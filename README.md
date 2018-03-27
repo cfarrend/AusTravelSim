@@ -1,6 +1,2 @@
 # AusTravelSim
 A game focused on travelling around Australia
-
-hi
-
-sds
